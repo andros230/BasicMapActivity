@@ -27,6 +27,7 @@ public class MainActivity extends Activity implements AMap.OnMarkerClickListener
         if (aMap == null) {
             aMap = mMapView.getMap();
         }
+
         aMap.setOnMarkerClickListener(this);  //设置点击marker事件监听器
 
         MarkerOptions markerOptions = new MarkerOptions();
