@@ -24,6 +24,7 @@ public class MainActivity extends Activity implements AMap.OnMarkerClickListener
         mMapView.onCreate(savedInstanceState);
 
 
+        
         if (aMap == null) {
             aMap = mMapView.getMap();
         }
