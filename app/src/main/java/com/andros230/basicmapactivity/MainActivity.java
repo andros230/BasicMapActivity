@@ -11,7 +11,7 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 
-public class MainActivity extends Activity implements AMap.OnMarkerClickListener{
+public class MainActivity extends Activity implements AMap.OnMarkerClickListener, AMap.OnInfoWindowClickListener{
     private MapView mMapView;
     private AMap aMap;
 
@@ -28,6 +28,7 @@ public class MainActivity extends Activity implements AMap.OnMarkerClickListener
             aMap = mMapView.getMap();
         }
         aMap.setOnMarkerClickListener(this);  //设置点击marker事件监听器
+        aMap.setOnInfoWindowClickListener(this);// 设置点击infoWindow事件监听器
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(new LatLng(31.20998,121.476077));
@@ -64,5 +65,10 @@ public class MainActivity extends Activity implements AMap.OnMarkerClickListener
     public boolean onMarkerClick(Marker marker) {
         Log.d("---","onMarkerClick");
         return false;
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Log.d("---","onInfoWindowClick");
     }
 }
